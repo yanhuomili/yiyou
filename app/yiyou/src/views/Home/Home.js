@@ -100,7 +100,7 @@ export default class Home extends Component {
 				        swipeable={true}
 				      >
       					{arr.map((item,index)=>(
-      						<div key="index" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
+      						<div key="index" style={{ height: 'auto', backgroundColor: '#fff' }}>
 					          {/*<Carousel
 						          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
 						          afterChange={index => console.log('slide to', index)}
@@ -115,6 +115,8 @@ export default class Home extends Component {
 						            )}
 						        </Carousel>*/}
 						        
+						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
+						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
 						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
 					        </div>
       					))}

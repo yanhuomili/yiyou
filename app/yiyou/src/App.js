@@ -16,7 +16,7 @@ import { Button } from 'antd-mobile';
 
 class App extends Component {
 	componentDidMount() {
-		this.getData();
+//		this.getData();
 	}
 	async getData(){
 		let postData={
