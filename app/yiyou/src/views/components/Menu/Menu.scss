@@ -1,0 +1,21 @@
+.menu{
+    text-align: left;
+    padding: 0 .3rem;
+    .out{
+        overflow: hidden;
+        h2{
+            width: 100%;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            border-bottom:1px solid #ddd ;
+        }
+        ul{
+            height: 0;
+            li{
+                line-height: 3;
+                border-bottom:1px solid #ddd ;
+            }
+        }
+    }
+}
+

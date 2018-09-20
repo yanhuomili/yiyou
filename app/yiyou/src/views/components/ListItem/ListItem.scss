@@ -1,0 +1,38 @@
+.list-item{
+    display: flex;
+    padding: .2rem 0;
+    margin-bottom: .15rem;
+    text-align: left;
+    .left-img{
+        width: 2.8rem;
+        height: 2.2rem;
+        margin-right: .3rem;
+    }
+    .right{
+        .title{
+            width: 3.6rem;
+            margin-bottom: .15rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .text{
+            width: 3.6rem;
+            margin-bottom: .15rem;
+            display: -webkit-box;
+             -webkit-box-orient: vertical;
+             -webkit-line-clamp: 3;
+             overflow: hidden;
+        }
+        .time{
+            display: flex;
+            justify-content: flex-start;
+            span{
+                font-size: .24rem;
+                color: #999;
+                margin-right: .2rem;
+            }
+        }
+    }
+}
+

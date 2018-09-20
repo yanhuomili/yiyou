@@ -1,0 +1,23 @@
+.advantage{
+    padding: .1rem 0;
+    li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 2.5rem;
+            height: 2rem;
+        }
+        .title{
+            font-size: .38rem;
+            padding: .2rem 0;
+            border-bottom: 2px solid #eb5504;
+            margin: 0;
+        }
+        .text{
+            font-size: .26rem;
+            color: #999;
+        }
+    }
+}

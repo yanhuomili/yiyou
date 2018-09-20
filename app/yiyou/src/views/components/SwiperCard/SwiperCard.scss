@@ -1,0 +1,26 @@
+.swiper-card{
+    width: 100%;
+    padding: .1rem .15rem;
+    .ban{
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .content{
+        padding: .2rem .3rem;
+    }
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: .1rem;
+        .title-icon{
+            width: .78rem;
+            margin-right: .2rem;
+        }
+    }
+    .text{
+            line-height: 1.6;
+            text-align: left;
+        }
+}

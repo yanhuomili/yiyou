@@ -15,7 +15,27 @@ import i19 from '../../static/img/i19.png';
 import i20 from '../../static/img/i20.png';
 import i22 from '../../static/img/i22.png';
 import i24 from '../../static/img/i24.png';
+import i34 from '../../static/img/i34.png';
+import i35 from '../../static/img/i35.png';
 import ban3 from '../../static/img/ban3.jpg';
+import b2 from '../../static/img/b2.jpg';
+
+import c1 from '../../static/img/c1.png';
+import c2 from '../../static/img/c2.png';
+import c3 from '../../static/img/c3.png';
+import c4 from '../../static/img/c4.png';
+import c5 from '../../static/img/c5.png';
+import c6 from '../../static/img/c6.png';
+
+import n3 from '../../static/img/n3.jpg';
+
+
+
+import SwiperCard from '../components/SwiperCard/SwiperCard.js';
+import AdvantageItem from '../components/AdvantageItem/AdvantageItem.js';
+import ImgList from '../components/ImgList/ImgList.js';
+import ListItem from '../components/ListItem/ListItem.js';
+import Menu from '../components/Menu/Menu.js';
 
 
 export default class Home extends Component {
@@ -28,7 +48,9 @@ export default class Home extends Component {
 		
 	}
   render() {
-  	const imgArr=[banner1,banner1];
+  	
+  	const imgArr=[[banner1,banner1,banner1],[banner1,banner1,banner1],[banner1,banner1,banner1]];
+  	const imgArr1=[banner1,banner1,banner1];
   	const data=[{icon:i18,text:'运单查询'},{icon:i19,text:'运单查询'},{icon:i20,text:'运单查询'},{icon:i22,text:'运单查询'},{icon:i24,text:'运单查询'},
   				{icon:i18,text:'运单查询'},{icon:i19,text:'运单查询'},{icon:i20,text:'运单查询'},{icon:i22,text:'运单查询'},{icon:i24,text:'运单查询'},
   	]
@@ -39,6 +61,41 @@ export default class Home extends Component {
 		  { title: '商业' },
 		];
   	const arr=[1,2,3]
+  	const  cardItem={
+  		banSrc:b2,
+  		title:'海购转运',
+  		icon:i34,
+  		text:'提供一系列物流解决方案。对于客户的 B2B2C、 M2B2C 或 B2B2B、M2B2B 不同的业务模式,分别'
+  		
+  	}
+  	const  advantageItem={
+  		icon:i35,
+  		title:'全球支付',
+  		text:'支付灵活方便快速可靠'
+  	}
+  	const  listItem={
+  		src:n3,
+  		title:'新闻标题是否会开始傅雷家书',
+  		text:'支付灵活方便快速可靠支付灵活方便快速可靠支付灵活方便快速可靠',
+  		time:'2018-9-22 08:22:03'
+  	}
+  	const imgList=[c1,c2,c3,c4,c5,c6]
+  	const menu=[
+  		{
+  			title:'项目一',
+  			innerList:['项目一的标题一','项目一的标题二','项目一的标题三','项目一的标题四',]
+  		},
+  		{
+  			title:'项目二',
+  			innerList:['项目二的标题一','项目二的标题二','项目二的标题三','项目二的标题四',]
+  		},
+  		{
+  			title:'项目三',
+  			innerList:['项目三的标题一','项目三的标题二','项目三的标题三','项目三的标题四',]
+  		},
+  	]
+  	
+  	
   	
     return (
       	<div className="Home">
@@ -60,7 +117,7 @@ export default class Home extends Component {
 		          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
 		          afterChange={index => console.log('slide to', index)}
 		        >
-		        	{imgArr.map((item,index)=>
+		        	{imgArr1.map((item,index)=>
 		        		<a className="ban-a" key={index} href="http://www.alipay.com">
 			              <img
 			                src={item}
@@ -86,7 +143,7 @@ export default class Home extends Component {
 		      activeStyle={false} />
       		</div>
       		<div className="business">
-      			<h3 className="title">
+      			<h3 className="title" style={{margin:'15px 0'}}>
       				全业务介绍
       			</h3>
       				
@@ -97,37 +154,57 @@ export default class Home extends Component {
       			</div>
       			<div className="tabs">
       				<Tabs tabs={tabs}
-				        swipeable={true}
+				        swipeable={false}
 				      >
       					{arr.map((item,index)=>(
-      						<div key="index" style={{ height: 'auto', backgroundColor: '#fff' }}>
-					          {/*<Carousel
+      						<div key={index} style={{ height: '840px',overFlow:'hidden', backgroundColor: '#fff'}}>
+					         	<Carousel
 						          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
 						          afterChange={index => console.log('slide to', index)}
 						        >
-						        	{imgArr.map((item,index)=>
-						        		<a className="ban-a" key={index} href="http://www.alipay.com">
-							              <img
-							                src={item}
-							                style={{ width: '100%', verticalAlign: 'top' }}
-							              />
-							            </a>
+						        	{imgArr.map((item1,index1)=>
+						        		<div key={index1}>
+						        			{item1.map((item2,index2)=><SwiperCard key={index2} cardItem={cardItem}/>)}
+						        		</div>
 						            )}
-						        </Carousel>*/}
-						        
-						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
-						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
-						        <img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
+						        </Carousel>
 					        </div>
       					))}
-				        
-				        {/*<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-				        	<img src={ban3}style={{ width: '100%', verticalAlign: 'top' }}/>
-				        </div>*/}
-				        
 				    </Tabs>
       			</div>
       		</div>
+      		
+      		<div style={{background:'#fff'}}>
+      			<AdvantageItem advantageItem={advantageItem}/>
+      			<AdvantageItem advantageItem={advantageItem}/>
+      			<AdvantageItem advantageItem={advantageItem}/>
+      		</div>
+      		<div style={{background:'#fff',textAline:'left',lineHeight:'1.5'}}>
+      			<h3>链接您的账账户加快您的预约</h3>
+      			<p style={{padding:'0 15px',color:'#999'}}>链接您的卖家帐户可以让您处理，通过单一的在线应用监控和发送多个订单</p>
+      			<ImgList imgList={imgList}/>
+      		</div>
+      		<div className="news" style={{background:'#fff',padding:'0 15px'}}>
+      			<h3>企业新闻</h3>
+      			<Tabs tabs={tabs}
+			        swipeable={true}
+			      >
+      				<div key="index">
+      					<ListItem listItem={listItem}/>
+      					<ListItem listItem={listItem}/>
+      					<ListItem listItem={listItem}/>
+      					<ListItem listItem={listItem}/>
+      					<ListItem listItem={listItem}/>
+      					<ListItem listItem={listItem}/>
+      				</div>
+      				
+      			</Tabs>
+      		</div>
+      		<div>
+      			<Menu menu={menu}/>
+      		</div>
+      		
+      		
       		
       	</div>
     );
