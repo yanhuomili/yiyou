@@ -1,0 +1,19 @@
+.footer{
+    margin-top: .4rem;
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: .3rem;
+        li{
+//          height: .4rem;
+//          line-height: .4rem;
+            padding: .1rem .2rem;
+            border-right: 1px solid #ddd;
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}
+

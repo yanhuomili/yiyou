@@ -4,6 +4,9 @@ import './Menu.scss';
 export default class Menu extends Component {
 	constructor(props){
 		super(props);
+		this.state={
+			
+		}
 	}
 	componentDidMount() {
 		console.log(this.props.menu)
@@ -11,7 +14,20 @@ export default class Menu extends Component {
 	goBack(){
 		console.log('goBack');
 	}
-	clickItem(val){
+	clickItem(val,event){
+		console.log(val);
+		let h=event.target.nextElementSibling.style.height;
+		console.log(h);
+		if(h=='0px'||h==0){
+			event.target.nextElementSibling.style.height='auto'
+			event.target.firstElementChild.style.transform='translateY(-50%) rotateZ(-135deg)';
+		}else{
+			event.target.nextElementSibling.style.height='0px';
+			event.target.firstElementChild.style.transform='translateY(-50%) rotateZ(45deg)';
+			
+		}
+	}
+	clickMenu(val){
 		console.log(val);
 	}
   render() {
@@ -20,9 +36,9 @@ export default class Menu extends Component {
       	<div className="menu">
       		{menu.map((item,index)=>
       			<div key={index} className="out">
-      				<h2 onClick={this.clickItem.bind(this,item)}>{item.title}</h2>
+      				<h2 onClick={this.clickItem.bind(this,item)}>{item.title}<span></span></h2>
 	      			<ul>
-	      				{item.innerList.map((innerItem,innerIndex)=><li key={innerIndex}>{innerItem}</li>)}
+	      				{item.innerList.map((innerItem,innerIndex)=><li onClick={this.clickMenu.bind(this,innerItem)} key={innerIndex}>{innerItem}</li>)}
 	      			</ul>
 	      		</div>
       		)}

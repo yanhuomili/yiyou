@@ -36,6 +36,8 @@ import AdvantageItem from '../components/AdvantageItem/AdvantageItem.js';
 import ImgList from '../components/ImgList/ImgList.js';
 import ListItem from '../components/ListItem/ListItem.js';
 import Menu from '../components/Menu/Menu.js';
+import Footer from '../components/Footer/Footer.js';
+
 
 
 export default class Home extends Component {
@@ -203,7 +205,7 @@ export default class Home extends Component {
       		<div>
       			<Menu menu={menu}/>
       		</div>
-      		
+      		<Footer/>
       		
       		
       	</div>

@@ -1,6 +1,8 @@
 .menu{
     text-align: left;
     padding: 0 .3rem;
+    background: #666;
+    color: #f8f8f8;
     .out{
         overflow: hidden;
         h2{
@@ -8,12 +10,40 @@
             height: 1.1rem;
             line-height: 1.1rem;
             border-bottom:1px solid #ddd ;
+            color: #f1784f;
+            position: relative;
+            span{
+                position: absolute;
+                display: inline-block;
+                width: .26rem;
+                height: .26rem;
+                border: 1px solid #f8f8f8;
+                top: 50%;
+                right: .5rem;
+                transform: translateY(-50%) rotateZ(45deg);
+                border-bottom: none;
+                border-right: none;
+            }
         }
         ul{
             height: 0;
             li{
                 line-height: 3;
                 border-bottom:1px solid #ddd ;
+                position: relative;
+                &:after{
+                    content: "";
+                    width: .22rem;
+                    height: .22rem;
+                    border: 1px solid #f8f8f8;
+                    position: absolute;
+                    right: .5rem;
+                    top: 50%;
+                    transform:translateY(-50%) rotate(-45deg);
+                    border-top:none;
+                    border-left:none;
+                    
+                }
             }
         }
     }
