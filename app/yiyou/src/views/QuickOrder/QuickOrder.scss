@@ -1,0 +1,29 @@
+.quick-order{
+    text-align: left;
+    .top{
+        padding: .3rem .2rem;  
+        background: #fff; 
+        border-top: 1px solid #ddd; 
+        p{
+            margin-top: .1rem;
+            line-height: 1.6;
+        }    
+    }
+    .item{
+       span{
+           display: block;
+           padding: .2rem .2rem;
+           font-size: .26rem;
+           
+       }
+    }
+    .problem{
+        font-size: .28rem;
+        color: #999;
+        display: block;
+        padding: .2rem;
+        a{
+            color: #f60;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //使用时需引入相应的组件
-import { Button,NavBar,Icon,InputItem,Carousel,Grid,Tabs } from 'antd-mobile';
+import { Button,InputItem,Carousel,Grid,Tabs } from 'antd-mobile';
 
 import './Home.scss';
 import {Link} from 'react-router-dom';
@@ -35,7 +35,7 @@ import SwiperCard from '../components/SwiperCard/SwiperCard.js';
 import AdvantageItem from '../components/AdvantageItem/AdvantageItem.js';
 import ImgList from '../components/ImgList/ImgList.js';
 import ListItem from '../components/ListItem/ListItem.js';
-import Menu from '../components/Menu/Menu.js';
+import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
 
 
@@ -49,6 +49,9 @@ export default class Home extends Component {
 	goHome(){
 		
 	}
+	seaMore(){
+		console.log('查看更多');
+	}
   render() {
   	
   	const imgArr=[[banner1,banner1,banner1],[banner1,banner1,banner1],[banner1,banner1,banner1]];
@@ -61,6 +64,11 @@ export default class Home extends Component {
 		  { title: '物流' },
 		  { title: '金融' },
 		  { title: '商业' },
+		];
+		
+	const tabs1 = [
+		  { title: '企业新闻' },
+		  { title: '行业新闻' },
 		];
   	const arr=[1,2,3]
   	const  cardItem={
@@ -82,38 +90,24 @@ export default class Home extends Component {
   		time:'2018-9-22 08:22:03'
   	}
   	const imgList=[c1,c2,c3,c4,c5,c6]
-  	const menu=[
-  		{
-  			title:'项目一',
-  			innerList:['项目一的标题一','项目一的标题二','项目一的标题三','项目一的标题四',]
-  		},
-  		{
-  			title:'项目二',
-  			innerList:['项目二的标题一','项目二的标题二','项目二的标题三','项目二的标题四',]
-  		},
-  		{
-  			title:'项目三',
-  			innerList:['项目三的标题一','项目三的标题二','项目三的标题三','项目三的标题四',]
-  		},
-  	]
   	
   	
   	
     return (
       	<div className="Home">
-      		<NavBar
-		      mode="light"
-		      icon={<Icon type="left" />}
-		      onLeftClick={this.goBack.bind(this)}
-		      rightContent={[<Icon key="0" type="ellipsis" />]}>
-      			<Link to="/Home">
-      				<img onClick={this.goHome.bind(this)} className="logo" src={logo}/>
-      			</Link>
-      		</NavBar>
       		<div className="search-wrap">
       			<input type="text" placeholder="请输入关键字"/>
       			<img className="search" src={search}/>
+      			
       		</div>
+      		
+      		<p>
+	      		<Link to="/quickOrder">快速下单页面</Link>
+      		</p>
+  			<img style={{width:'auto',height:'150px'}} className="search" src={'http://192.168.1.44:8080/img/2-3.png'}/>
+  			
+  			
+  			
       		<div className="banner">
       			<Carousel
 		          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
@@ -188,24 +182,27 @@ export default class Home extends Component {
       		</div>
       		<div className="news" style={{background:'#fff',padding:'0 15px'}}>
       			<h3>企业新闻</h3>
-      			<Tabs tabs={tabs}
+      			<Tabs tabs={tabs1}
 			        swipeable={true}
 			      >
-      				<div key="index">
-      					<ListItem listItem={listItem}/>
-      					<ListItem listItem={listItem}/>
-      					<ListItem listItem={listItem}/>
-      					<ListItem listItem={listItem}/>
-      					<ListItem listItem={listItem}/>
-      					<ListItem listItem={listItem}/>
-      				</div>
+      				{
+      					tabs1.map((item,index)=>(
+      						<div key="index">
+		      					<ListItem listItem={listItem}/>
+		      					<ListItem listItem={listItem}/>
+		      					<ListItem listItem={listItem}/>
+		      					<ListItem listItem={listItem}/>
+		      					<ListItem listItem={listItem}/>
+		      					<ListItem listItem={listItem}/>
+		      				</div>
+      					))
+      				}
       				
       			</Tabs>
+      			<div className="more" onClick={this.seaMore.bind(this)}>
+      				<Link to="/new">查看更多动态</Link>
+      			</div>
       		</div>
-      		<div>
-      			<Menu menu={menu}/>
-      		</div>
-      		<Footer/>
       		
       		
       	</div>

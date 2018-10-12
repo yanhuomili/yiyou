@@ -1,0 +1,21 @@
+.new-detail{
+    .new-title{
+        margin: .2rem;
+        line-height: 1.5;
+        font-size: .28rem;
+    }
+    .new-time{
+        padding-bottom: .2rem;
+        border-bottom: 1px solid #ddd;
+        span{
+          margin: 0 .1rem;
+          color: #999;
+        }
+    }
+    .new-content{
+        padding: 0 .2rem .3rem;
+        line-height: 2;
+        color: #666;
+        font-size: .28rem;
+    }
+}

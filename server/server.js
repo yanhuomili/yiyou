@@ -33,6 +33,7 @@ app.use('/getUrl',(req,res)=>{
 })
 
 app.use(express.static('./'));
+//app.use(express.static(__dirname+'/img'));
 
 var mysql  = require('mysql');  //调用MySQL模块
 	//创建一个connection
