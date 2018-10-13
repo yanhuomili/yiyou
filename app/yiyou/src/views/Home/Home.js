@@ -101,9 +101,10 @@ export default class Home extends Component {
       			
       		</div>
       		
-      		<p>
-	      		<Link to="/quickOrder">快速下单页面</Link>
-      		</p>
+      		<p><Link to="/quickOrder">快速下单页面</Link></p>
+      		<p><Link to="/showPrice">获取价格页面</Link></p>
+      		
+      		
   			<img style={{width:'auto',height:'150px'}} className="search" src={'http://192.168.1.44:8080/img/2-3.png'}/>
   			
   			

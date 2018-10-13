@@ -6,6 +6,7 @@ import Home from './views/Home/Home.js';
 import New from './views/New/New.js';
 import NewDetail from './views/NewDetail/NewDetail.js';
 import QuickOrder from './views/QuickOrder/QuickOrder.js';
+import ShowPrice from './views/ShowPrice/ShowPrice.js';
 
 //引入路由模块
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
@@ -30,8 +31,8 @@ class App extends Component {
 				age:22,
 				home:'guangxi'
 			}
-		let data=(await getData({data:postData})).data;
-		console.log(data,'数据库数据');
+//		let data=(await getData({data:postData})).data;
+//		console.log(data,'数据库数据');
 	}
   render() {
     return (
@@ -43,6 +44,7 @@ class App extends Component {
         		<Route path="/new" component={New}></Route>
         		<Route path="/newDetail" component={NewDetail}></Route>
         		<Route path="/quickOrder" component={QuickOrder}></Route>
+        		<Route path="/showPrice" component={ShowPrice}></Route>
         		<Footer/>
 	      </div>
 	    </Router>

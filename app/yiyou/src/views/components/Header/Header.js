@@ -20,7 +20,7 @@ export default class Header extends Component{
 	}
 	render(){
 		return(
-			<NavBar
+			<NavBar style={{borderBottom:'1px solid #ddd'}}
 		      mode="light"
 		      icon={<Icon type="left" />}
 		      onLeftClick={this.goBack.bind(this)}
