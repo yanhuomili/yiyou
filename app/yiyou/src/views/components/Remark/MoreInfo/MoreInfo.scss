@@ -1,0 +1,74 @@
+.more-info{
+    width: 100%;
+    color: #fff;
+    border: 1px solid #f60;
+    box-sizing: border-box;
+   .more-info-top{
+       background: #424b50;
+       padding: .2rem 0;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       position: relative;
+       img{
+           width: 1.2rem;
+           height: 1.2rem;
+       }
+       span{
+           position: absolute;
+           top: .2rem;
+           right: .5rem;
+       }
+   }
+   .more-info-content{
+       padding: 0 .4rem;
+   }
+   .insurance-btns{
+       span{
+           display: block;
+           width: 70%;
+           height: .6rem;
+           text-align: center;
+           line-height: .6rem;
+           border-radius: .6rem;
+           border: 1px solid #f60;
+           margin: .3rem auto;
+       }
+       .need{
+           background: #f60;
+           color: #fff;
+       }
+       .un-need{
+           background: #fff;
+           color: #f60;
+       }
+   }
+}
+
+
+.tip-wrap{
+    width: 100%;
+    color: #666;
+    margin: .4rem 0;
+    .tip-top{
+        display: flex;
+        align-items: center;
+        font-size: .32rem;
+        margin-bottom: .1rem;
+        img{
+            width: .25rem;
+            height: .25rem;
+            margin-right: .1rem;
+        }
+    }
+    .top-list{
+        text-align: left;
+        padding-left: .1rem;
+        line-height: 1.6;
+        font-size: .24rem;
+        li{
+            margin-bottom: .1rem;
+        }
+    }
+}

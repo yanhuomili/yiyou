@@ -1,0 +1,48 @@
+.remark{
+    background: #fff;
+    padding: 0 .2rem .4rem;
+    .remark-menu{
+        display: flex;
+        justify-content: flex-end;
+        padding: .2rem 0;
+        li{
+            margin-left: .2rem;
+        }
+        img{
+            width: .2rem;
+            height: .2rem;
+            vertical-align: middle;
+            margin-right: .1rem;
+        }
+        span{
+            vertical-align: middle;
+        }
+    }
+    .remark-content{
+        ul{
+            display: none;
+            li{
+                display: flex;
+                align-items: flex-start;
+                font-size: .26rem;
+                color: #999;
+                margin-bottom: .2rem;
+                img{
+                    width: .2rem;
+                    height: .2rem;
+                    margin-right: .2rem;
+                    margin-top: .1rem;
+                }
+                span{
+                    flex: 1;
+                    text-align: left;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+    .more-box{
+        width: 100%;
+        background: #fff;
+    }
+}

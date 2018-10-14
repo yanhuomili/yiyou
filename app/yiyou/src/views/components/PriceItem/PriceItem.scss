@@ -1,23 +1,4 @@
-.price-item{
-    width: 100%;
-    .item-top{
-        padding: .2rem;
-        background: #424b50;
-        display: flex;
-        align-items: center;
-        color: #fff;
-        text-align: left;
-        img{
-            width: 1rem;
-            height: 1rem;
-            margin-right:.3rem ;
-        }
-        p{
-            margin-bottom: .2rem;
-        }
-    }
-    .item-middle{
-        padding: 0 .2rem;
-        background: #fff;
-    }
+.single-price{
+    border: 1px solid #ddd;
+    margin-bottom: .3rem;
 }
