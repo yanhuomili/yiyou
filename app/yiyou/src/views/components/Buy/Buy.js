@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './Buy.scss';
 
+import PropTypes from 'prop-types';
 
 import Footer from '../Footer/Footer.js';
 import i18 from '../../../static/img/i18.png';
@@ -8,18 +9,19 @@ import i31 from '../../../static/img/i31.png';
 export default class Buy extends Component{
 	constructor(props){
 		super(props);
-		this.state={}
 	}
 	componentDidMount(){
 		console.log('组件已经加载');
+		console.log(PropTypes)
 	}
 	render(){
 		return(
 			<div className="buy">
+			
 				<div className="top">
 					<div>
 						<span>EUR</span>
-						<span>68.50</span>
+						<span>{this.props.price}</span>
 					</div>
 					<span className="buy-btn">购买</span>
 				</div>
@@ -35,4 +37,8 @@ export default class Buy extends Component{
 			</div>
 		)
 	}
+}
+
+Buy.PropTypes = {
+  price: PropTypes.string.isRequired
 }

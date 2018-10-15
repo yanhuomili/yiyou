@@ -12,8 +12,8 @@ function Test(props){
 		<ThemeContext.Consumer>
 	      {theme => (
 	      	<div {...props}>
-				<span style={{background:theme.background,color:theme.color}}>{theme.background}</span>
-				<p onClick={()=>{theme.changeState('传递回去的参数')}} style={{color:theme.color,background:theme.background}}>{theme.color+'--'+theme.backgound}</p>
+				<span style={{background:theme.background,color:theme.color}}>context传递下来的值,在组件内属于去全局的</span>
+				<p onClick={()=>{theme.changeState('传递回去的参数')}} style={{color:theme.color,background:theme.background}}>点击改变状态</p>
 	      	</div>
 	      )}
 	    </ThemeContext.Consumer>

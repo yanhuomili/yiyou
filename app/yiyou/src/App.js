@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Provider} from 'react-redux';
+import store from './store/store.js';
 import logo from './logo.svg';
 import './App.css';
 import './app.scss';
@@ -36,6 +38,7 @@ class App extends Component {
 	}
   render() {
     return (
+    	<Provider store={store}>
     	<Router>
 	      <div className="App">
 	      		<Header/>
@@ -48,6 +51,7 @@ class App extends Component {
         		<Footer/>
 	      </div>
 	    </Router>
+	    </Provider>
     );
   }
 }
