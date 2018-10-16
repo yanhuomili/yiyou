@@ -1,10 +1,32 @@
-export function add(state={n:10},action){
-	console.log(state,'reducer方法中打印');
-	return state.n+1;
+const initialState={
+	count:10,
+	name:'lili',
+	home:'广州',
+	age:20,
+	hobby:['yumaoqiu','篮球']
 }
-export function del(state={n:10},action){
-	return state.n-1;
+
+const reducer=(state=initialState,action)=>{
+	switch (action.type){
+		case 'INCREASE':
+			return {
+				...state,
+				count:state.count+action.count1
+			}
+		case 'CHANGE_NAME':
+			return {
+				...state,
+				name:action.name
+			}
+		default:
+			return initialState;
+	}
 }
-export function change(state={n:10},action){
-	return state.n+10;
+
+export const changeHome=(state=initialState,action)=>{
+	return{
+		...state,
+		home:action.home
+	}
 }
+export default reducer;

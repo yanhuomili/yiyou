@@ -1,9 +1,9 @@
 import {combineReducers,createStore} from 'redux';
-import * as reducers from './reducer.js';
+import reducer from './reducer.js';
 
-const reducersHandler=combineReducers(reducers);
+//const reducersHandler=combineReducers(reducers);
 
-const store=createStore(reducersHandler);
+const store=createStore(reducer);
 export default store;
 
 //function counter(state=0,action){
