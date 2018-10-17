@@ -28,12 +28,13 @@ export default class PriceItem extends Component{
 	componentDidMount(){
 		console.log('组件已经加载');
 		this.setState({
-			count:store.getState().count,
-			name:store.getState().name,
-			home:store.getState().home,
-			age:store.getState().age,
+			count:store.getState().reducer.count,
+			name:store.getState().reducer.name,
+			home:store.getState().reducer.home,
+			age:store.getState().reducer.age,
 		})
-		console.log(this.props,'priceItem打印');
+		console.log(store.getState().reducer.count,'count');
+		console.log(store.getState(),'priceItem打印');
 	}
 	showMore(){
 		console.log('6666')
@@ -55,6 +56,13 @@ export default class PriceItem extends Component{
 			name:'李浩华'
 		});
 	}
+	changeHome(){
+		console.log('乔迁')
+		store.dispatch({
+			type:'CHANGE_HOME',
+			home:'广州市民'
+		});
+	}
 	
 	render(){
 		const activeIndex=this.state.activeIndex;
@@ -66,22 +74,25 @@ export default class PriceItem extends Component{
 		const age=this.state.age;
 		store.subscribe(()=>{
 			this.setState({
-				count:store.getState().count,
-				name:store.getState().name,
+				count:store.getState().reducer.count,
+				name:store.getState().reducer.name,
+				home:store.getState().reducer.home
 			})
 		})
+		const cc=store.getState().reducer.count;
+		const nn=store.getState().changeName.name;
 		return(
 			<div className="single-price">
 				<div className="item-top">
 					<img src={i18}/>
 					<div>
 						<p>邮政奢侈品杂物包税特快专线--{count}</p>
-						<span>L0115--{name}</span>
+						<span>L0115--{nn}--{cc}</span>
 					</div>
 				</div>
 				<div className="send-something">
 					<ul className="send-something-menu">
-						<li onClick={this.changeMenu.bind(this,0)} style={activeIndex==0?activeStyle:null}><img src={i18}/><span>上门取货--{home}</span></li>
+						<li onClick={this.changeMenu.bind(this,0)} style={activeIndex==0?activeStyle:null}><img src={i18}/><span>上门取货--{store.getState().reducer.home}</span></li>
 						<li onClick={this.changeMenu.bind(this,1)} style={activeIndex==1?activeStyle:null}><img src={i18}/><span>自动送仓--{age}</span></li>
 					</ul>
 					<div className="send-something-content">
@@ -108,6 +119,7 @@ export default class PriceItem extends Component{
 				
 				<button onClick={this.add.bind(this)}>加上</button>
 				<button onClick={this.changeName.bind(this)}>修改名字</button>
+				<button onClick={this.changeHome.bind(this)}>乔迁</button>
 			</div>
 		)
 	}

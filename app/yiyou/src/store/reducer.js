@@ -1,4 +1,5 @@
-const initialState={
+import { combineReducers } from 'redux'
+export const initialState={
 	count:10,
 	name:'lili',
 	home:'广州',
@@ -6,27 +7,54 @@ const initialState={
 	hobby:['yumaoqiu','篮球']
 }
 
-const reducer=(state=initialState,action)=>{
+export const reducer=(state=initialState,action)=>{
 	switch (action.type){
 		case 'INCREASE':
 			return {
 				...state,
 				count:state.count+action.count1
 			}
-		case 'CHANGE_NAME':
-			return {
-				...state,
-				name:action.name
-			}
+//		case 'CHANGE_NAME':
+//			return {
+//				...state,
+//				name:action.name
+//			}
+		case 'CHANGE_HOME':
+			return{
+					...state,
+					home:action.home
+				}
 		default:
-			return initialState;
+			return state;
+	}
+}
+console.log(reducer,'combineReducers')
+const changeHobby=(state=initialState,action)=>{
+	switch (action.type){
+		case 'CHANGE_HOBBY':
+			return{
+					...state,
+					hobby:action.hobby
+				}
+		default:
+			return state;
 	}
 }
 
-export const changeHome=(state=initialState,action)=>{
-	return{
-		...state,
-		home:action.home
+const changeName=(state=initialState,action)=>{
+	switch (action.type){
+		case 'CHANGE_NAME':
+			return{
+					...state,
+					name:action.name
+				}
+		default:
+			return state;//这里要写state,而不是写initialState
 	}
+	
 }
-export default reducer;
+
+
+let outer=combineReducers({changeHobby,reducer,changeName});
+console.log(outer,'outer')
+export default outer;

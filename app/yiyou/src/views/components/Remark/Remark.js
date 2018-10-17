@@ -9,6 +9,9 @@ import Footer from '../Footer/Footer.js';
 import i18 from '../../../static/img/i18.png';
 import i31 from '../../../static/img/i31.png';
 
+
+
+
 import {ThemeContext} from '../../ShowPrice/ThemeContent.js';
 function Test(props){
 	return(
