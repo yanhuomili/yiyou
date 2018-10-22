@@ -21,7 +21,8 @@ export default class ShowPrice extends Component{
 				foreground: '#000000',
 			    background: '#eeeeee',
 			    color:'#f60',
-			    changeState:this.changeState.bind(this)
+			    changeState:this.changeState.bind(this),
+			    buy:this.buy.bind(this)
 			}
 			
 		}
@@ -54,6 +55,11 @@ export default class ShowPrice extends Component{
 			}
 			
 		})
+	}
+	buy(val){
+		console.log(val,'buy');
+		console.log('购买');
+		window.location.href='/orderInfo';
 	}
 	render(){
 		const tabs=[

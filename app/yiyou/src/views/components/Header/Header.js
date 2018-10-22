@@ -14,6 +14,7 @@ export default class Header extends Component{
 	}
 	goBack(){
 		console.log('goBack');
+		window.history.go(-1);
 	}
 	goHome(){
 		

@@ -9,6 +9,8 @@ import New from './views/New/New.js';
 import NewDetail from './views/NewDetail/NewDetail.js';
 import QuickOrder from './views/QuickOrder/QuickOrder.js';
 import ShowPrice from './views/ShowPrice/ShowPrice.js';
+import OrderInfo from './views/OrderInfo/OrderInfo.js';
+import PackageInfo from './views/PackageInfo/PackageInfo.js';
 
 //引入路由模块
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
@@ -48,6 +50,9 @@ class App extends Component {
         		<Route path="/newDetail" component={NewDetail}></Route>
         		<Route path="/quickOrder" component={QuickOrder}></Route>
         		<Route path="/showPrice" component={ShowPrice}></Route>
+        		<Route path="/orderInfo" component={OrderInfo}></Route>
+        		<Route path="/packageInfo" component={PackageInfo}></Route>
+        		
         		<Footer/>
 	      </div>
 	    </Router>

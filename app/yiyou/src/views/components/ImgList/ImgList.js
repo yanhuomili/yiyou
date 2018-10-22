@@ -17,7 +17,7 @@ export default class ImgList extends Component {
   render() {
     return (
       	<div className="img-list">
-      		{this.props.imgList.map((item,index)=><img key="index" src={item} />)}
+      		{this.props.imgList.map((item,index)=><img key={index} src={item} />)}
       	</div>
     );
   }
